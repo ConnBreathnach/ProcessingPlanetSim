@@ -1,0 +1,26 @@
+final float UNIVERSAL_GRAVITATIONAL_CONSTANT = 50;
+final int SCREENX = 1000;
+final int SCREENY = 1000;
+
+
+final PVector CALCULATE_GRAVITATIONAL_FORCE(Planet p1, Planet p2)
+{
+  float mass1 = p1.mass;
+  float mass2 = p2.mass;
+  PVector p1Pos = p1.position;
+  PVector p2Pos = p2.position;
+  float xForce = ((UNIVERSAL_GRAVITATIONAL_CONSTANT * mass1 * mass2)/sq(p1Pos.x-p2Pos.x));
+  float yForce = ((UNIVERSAL_GRAVITATIONAL_CONSTANT * mass1 * mass2)/sq(p1Pos.y-p2Pos.y));
+  
+}
+
+void calculatePlanetForce(Planet[] planets)
+{
+  for(int planet1Index = 0; planet1Index < planets.length; planet1Index++)
+  {
+    for(int otherPlanetIndex = planet1Index+1; otherPlanetIndex < planets.length; otherPlanetIndex++) // Force is the same on both planets
+    {
+      float gravForce = CALCULATE_GRAVITATIONAL_FORCE(planets[planet1Index], planets[otherPlanetIndex]); 
+    }
+  }
+}

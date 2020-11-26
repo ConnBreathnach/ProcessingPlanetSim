@@ -1,0 +1,30 @@
+final float UNIVERSAL_GRAVITATIONAL_CONSTANT = 10;
+final int SCREENX = 1000;
+final int SCREENY = 1000;
+
+
+PVector CALCULATE_GRAVITATIONAL_FORCE(Planet onp1, Planet p2)
+{//onp1 refers to the planet we wish to apply the force to
+  //When searching for a way to calculate the force between and on these two objects, came across this exact problem explained in Khan academy! Written in processing.js and all! https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-forces/a/gravitational-attraction
+  float mass1 = onp1.mass;
+  float mass2 = p2.mass;
+  PVector force = PVector.sub(onp1.position, p2.position);
+  float distance = force.mag();
+  force.normalize(); // Set force vector to 1 to be able to set the force applied easily
+  
+  float len = (UNIVER)
+  
+
+  return force;
+}
+
+void updatePlanetForces(Planet[] planets)
+{
+  for(int planet1Index = 0; planet1Index < planets.length; planet1Index++)
+  {
+    for(int otherPlanetIndex = 0; otherPlanetIndex < planets.length; otherPlanetIndex++) // Force is the same on both planets
+    {
+      //Even though force is the same
+    }
+  }
+}
